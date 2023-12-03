@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".global", ".global", "{8653
 		..\docker\docker-compose.yml = ..\docker\docker-compose.yml
 		Package.props = Package.props
 		README.md = README.md
+		Tests.props = Tests.props
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Redis", "Redis", "{0F215E38-13F0-4806-8CD9-403A425FB497}"
@@ -30,13 +31,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoEndpoints.Redis.App", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoEndpoints.Redis.Tests", "AutoEndpoints.Redis.Tests\AutoEndpoints.Redis.Tests.csproj", "{8DBC7E67-ED21-4F56-99D4-7D3966DF6B28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEndpoints.Dapper.SqlServer", "AutoEndpoints.Dapper.SqlServer\AutoEndpoints.Dapper.SqlServer.csproj", "{C2DF21CE-FED9-45EC-A6FE-F2264A1F2CEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoEndpoints.Dapper.SqlServer", "AutoEndpoints.Dapper.SqlServer\AutoEndpoints.Dapper.SqlServer.csproj", "{C2DF21CE-FED9-45EC-A6FE-F2264A1F2CEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEndpoints.Dapper.SqlServer.App", "AutoEndpoints.Dapper.SqlServer.App\AutoEndpoints.Dapper.SqlServer.App.csproj", "{AF7FFBE7-67A1-4B80-9FF8-DCFABDAC51C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoEndpoints.Dapper.SqlServer.App", "AutoEndpoints.Dapper.SqlServer.App\AutoEndpoints.Dapper.SqlServer.App.csproj", "{AF7FFBE7-67A1-4B80-9FF8-DCFABDAC51C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEndpoints.Dapper.SqlServer.Tests", "AutoEndpoints.Dapper.SqlServer.Tests\AutoEndpoints.Dapper.SqlServer.Tests.csproj", "{8A8DFADE-499E-4EEE-B2F3-F8969829D25B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoEndpoints.Dapper.SqlServer.Tests", "AutoEndpoints.Dapper.SqlServer.Tests\AutoEndpoints.Dapper.SqlServer.Tests.csproj", "{8A8DFADE-499E-4EEE-B2F3-F8969829D25B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEndpoints.Dapper", "AutoEndpoints.Dapper\AutoEndpoints.Dapper.csproj", "{BF2AE194-5479-4E17-B3A0-F15883B567DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoEndpoints.Dapper", "AutoEndpoints.Dapper\AutoEndpoints.Dapper.csproj", "{BF2AE194-5479-4E17-B3A0-F15883B567DA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlServer", "SqlServer", "{E0EECDC7-D737-47A2-8193-75ABE71AD8D7}"
 EndProject
