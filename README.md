@@ -48,7 +48,7 @@ await app.RunAsync();
 # How to use
 Basic steps:
 1) Create new web api project
-2) Added nuget package fro target database
+2) Added nuget package for target database
    
 | Database                  | Nuget package                                                                                   |
 |---------------------------|-------------------------------------------------------------------------------------------------|
