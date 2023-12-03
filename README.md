@@ -50,11 +50,11 @@ Basic steps:
 1) Create new web api project
 2) Added nuget package for target database
    
-| Database                  | Nuget package                                                                                   |
-|---------------------------|-------------------------------------------------------------------------------------------------|
-| Redis                     | [AutoEndpoints.Redis](https://www.nuget.org/packages/AutoEndpoints.Redis)                       |
-| Microsoft Azure Cosmos DB | [AutoEndpoints.Cosmos](https://www.nuget.org/packages/AutoEndpoints.Cosmos)                     |
-| Microsoft SQL Server      | [AutoEndpoints.Dapper.SqlServer](https://www.nuget.org/packages/AutoEndpoints.Dapper.SqlServer) |
+| Database                         | Nuget package                                                                                   |
+|----------------------------------|-------------------------------------------------------------------------------------------------|
+| Redis                            | [AutoEndpoints.Redis](https://www.nuget.org/packages/AutoEndpoints.Redis)                       |
+| Microsoft Azure Cosmos DB        | [AutoEndpoints.Cosmos](https://www.nuget.org/packages/AutoEndpoints.Cosmos)                     |
+| Microsoft SQL Server with Dapper | [AutoEndpoints.Dapper.SqlServer](https://www.nuget.org/packages/AutoEndpoints.Dapper.SqlServer) |
 
 3) Register database provider in services
 ```
