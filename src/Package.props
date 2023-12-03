@@ -4,7 +4,7 @@
     <Authors>Romfos</Authors>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Description>AutoEndpoints is a ASP.NET Core based framework for rapid WebAPI development</Description>
-    <PackageTags>ASP.NET AspNetCore WebApi</PackageTags>
+    <PackageTags>ASP.NET AspNetCore WebAPI MinimalAPIs</PackageTags>
     <RepositoryUrl>https://github.com/Romfos/AutoEndpoints</RepositoryUrl>
   </PropertyGroup>
 
