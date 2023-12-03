@@ -3,8 +3,9 @@
 AutoEndpoints is a framework for automatic database mapping to asp.net core web api with verification and validation
 
 [![.github/workflows/build.yml](https://github.com/Romfos/AutoEndpoints/actions/workflows/build.yml/badge.svg)](https://github.com/Romfos/AutoEndpoints/actions/workflows/build.yml)
-[![AutoEndpoints.Redis](https://img.shields.io/nuget/v/AutoEndpoints.Redis?label=AutoEndpoints.Redis)](https://www.nuget.org/packages/AutoEndpoints.Redis)
-[![AutoEndpoints.Cosmos](https://img.shields.io/nuget/v/AutoEndpoints.Cosmos?label=AutoEndpoints.Cosmos)](https://www.nuget.org/packages/AutoEndpoints.Cosmos)
+
+[![AutoEndpoints.Redis](https://img.shields.io/nuget/v/AutoEndpoints.Redis?label=AutoEndpoints.Redis)](https://www.nuget.org/packages/AutoEndpoints.Redis)\
+[![AutoEndpoints.Cosmos](https://img.shields.io/nuget/v/AutoEndpoints.Cosmos?label=AutoEndpoints.Cosmos)](https://www.nuget.org/packages/AutoEndpoints.Cosmos)\
 [![AutoEndpoints.SqlServer](https://img.shields.io/nuget/v/AutoEndpoints.SqlServer?label=AutoEndpoints.SqlServer)](https://www.nuget.org/packages/AutoEndpoints.SqlServer)
 
 Main features:
