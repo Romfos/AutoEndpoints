@@ -6,7 +6,7 @@ AutoEndpoints is a framework for automatic database mapping to asp.net core web 
 
 [![AutoEndpoints.Redis](https://img.shields.io/nuget/v/AutoEndpoints.Redis?label=AutoEndpoints.Redis)](https://www.nuget.org/packages/AutoEndpoints.Redis)\
 [![AutoEndpoints.Cosmos](https://img.shields.io/nuget/v/AutoEndpoints.Cosmos?label=AutoEndpoints.Cosmos)](https://www.nuget.org/packages/AutoEndpoints.Cosmos)\
-[![AutoEndpoints.SqlServer](https://img.shields.io/nuget/v/AutoEndpoints.SqlServer?label=AutoEndpoints.SqlServer)](https://www.nuget.org/packages/AutoEndpoints.SqlServer)
+[![AutoEndpoints.Dapper.SqlServer](https://img.shields.io/nuget/v/AutoEndpoints.Dapper.SqlServer?label=AutoEndpoints.Dapper.SqlServer)](https://www.nuget.org/packages/AutoEndpoints.Dapper.SqlServer)
 
 Supported databases:
 1) Redis
@@ -42,7 +42,7 @@ await app.RunAsync();
 # Nuget packages links  
 - https://www.nuget.org/packages/AutoEndpoints.Redis
 - https://www.nuget.org/packages/AutoEndpoints.Cosmos
-- https://www.nuget.org/packages/AutoEndpoints.SqlServer
+- https://www.nuget.org/packages/AutoEndpoints.Dapper.SqlServer
 
   
 # How to use
@@ -50,11 +50,11 @@ Basic steps:
 1) Create new web api project
 2) Added nuget package fro target database
    
-| Database                  | Nuget package                                                                     |
-|---------------------------|-----------------------------------------------------------------------------------|
-| Redis                     | [AutoEndpoints.Redis](https://www.nuget.org/packages/AutoEndpoints.Redis)         |
-| Microsoft Azure Cosmos DB | [AutoEndpoints.Cosmos](https://www.nuget.org/packages/AutoEndpoints.Cosmos)       |
-| Microsoft SQL Server      | [AutoEndpoints.SqlServer](https://www.nuget.org/packages/AutoEndpoints.SqlServer) |
+| Database                  | Nuget package                                                                                   |
+|---------------------------|-------------------------------------------------------------------------------------------------|
+| Redis                     | [AutoEndpoints.Redis](https://www.nuget.org/packages/AutoEndpoints.Redis)                       |
+| Microsoft Azure Cosmos DB | [AutoEndpoints.Cosmos](https://www.nuget.org/packages/AutoEndpoints.Cosmos)                     |
+| Microsoft SQL Server      | [AutoEndpoints.Dapper.SqlServer](https://www.nuget.org/packages/AutoEndpoints.Dapper.SqlServer) |
 
 3) Register database provider in services
 ```

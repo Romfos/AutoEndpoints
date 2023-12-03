@@ -1,12 +1,12 @@
 # Overview
 
 AutoEndpoints is ASP.NET Core based framework for rapid WebAPI development.
-Allow directly map database entities to web api enponits with access veritication and body validation
+Allow directly map database entities to web api endpoints with access verification and body validation
 
 Supported databases:
 - [Redis](https://www.nuget.org/packages/AutoEndpoints.Redis) 
 - [Microsoft Azure Cosmos DB](https://www.nuget.org/packages/AutoEndpoints.Cosmos)
-- [Microsoft SQL Server](https://www.nuget.org/packages/AutoEndpoints.SqlServer)
+- [Microsoft SQL Server with dapper](https://www.nuget.org/packages/AutoEndpoints.Dapper.SqlServer)
 
 Supported platforms:
  - .NET 6
