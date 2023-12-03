@@ -16,6 +16,12 @@ public sealed class DapperGetEndpointBuilder<T>(WebApplication webApplication, s
         return this;
     }
 
+    public DapperGetEndpointBuilder<T> Query(Func<IDbConnection, Task<T>> query)
+    {
+        this.query = (context, connection) => query(connection);
+        return this;
+    }
+
     public RouteHandlerBuilder Build()
     {
         if (query == null)

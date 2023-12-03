@@ -22,7 +22,7 @@ public sealed class Program
             .Build();
 
         app.MapDapperPostEndpoint<SqlServerTestModel>("/")
-            .Command((context, connection, value) => connection.ExecuteAsync(
+            .Command((connection, value) => connection.ExecuteAsync(
                 "INSERT INTO SqlServerTestModels (ID, Value) VALUES (@ID, @Value)",
                 value))
             .Build();

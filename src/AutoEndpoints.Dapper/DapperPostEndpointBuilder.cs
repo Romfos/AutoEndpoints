@@ -15,6 +15,12 @@ public sealed class DapperPostEndpointBuilder<T>(WebApplication webApplication, 
         return this;
     }
 
+    public DapperPostEndpointBuilder<T> Command(Func<IDbConnection, T, Task> command)
+    {
+        this.command = (context, connection, value) => command(connection, value);
+        return this;
+    }
+
     public RouteHandlerBuilder Build()
     {
         if (command == null)
