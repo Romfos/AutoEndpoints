@@ -10,11 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\AutoEndpoints.Dapper\AutoEndpoints.Dapper.csproj" />
+    <PackageReference Include="Dapper" Version="2.1.24" />
   </ItemGroup>
 
 </Project>

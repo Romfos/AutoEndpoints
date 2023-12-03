@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using System.Data;
 
-namespace AutoEndpoints.Dapper.SqlServer;
+namespace AutoEndpoints.Dapper;
 
 public sealed class DapperGetEndpointBuilder<T>(WebApplication webApplication, string pattern)
 {

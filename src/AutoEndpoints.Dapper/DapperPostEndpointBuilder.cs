@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using System.Data;
 
-namespace AutoEndpoints.Dapper.SqlServer;
+namespace AutoEndpoints.Dapper;
 
 public sealed class DapperPostEndpointBuilder<T>(WebApplication webApplication, string pattern)
 {
