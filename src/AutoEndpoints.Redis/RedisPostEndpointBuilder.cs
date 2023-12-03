@@ -11,12 +11,22 @@ public sealed class RedisPostEndpointBuilder<T>(WebApplication webApplication, s
 
     public RedisPostEndpointBuilder<T> Key(Func<HttpContext, string> selector)
     {
+        if (keySelector != null)
+        {
+            throw new ArgumentException($"Key has already been configured");
+        }
+
         keySelector = selector;
         return this;
     }
 
     public RedisPostEndpointBuilder<T> KeyFromRoute(string routeParameterName)
     {
+        if (keySelector != null)
+        {
+            throw new ArgumentException($"Key has already been configured");
+        }
+
         keySelector = context => context.GetRouteValue(routeParameterName)?.ToString()!;
         return this;
     }
@@ -25,7 +35,7 @@ public sealed class RedisPostEndpointBuilder<T>(WebApplication webApplication, s
     {
         if (keySelector == null)
         {
-            throw new ArgumentNullException(nameof(Key));
+            throw new ArgumentException("Key is required");
         }
 
         var redisStorage = webApplication.Services.GetRequiredService<RedisDataProvider>();

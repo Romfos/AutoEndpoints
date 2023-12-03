@@ -12,12 +12,22 @@ public sealed class DapperGetEndpointBuilder<T>(WebApplication webApplication, s
 
     public DapperGetEndpointBuilder<T> Query(Func<HttpContext, IDbConnection, Task<T>> query)
     {
+        if (this.query != null)
+        {
+            throw new ArgumentException($"Query has already been configured");
+        }
+
         this.query = query;
         return this;
     }
 
     public DapperGetEndpointBuilder<T> Query(Func<IDbConnection, Task<T>> query)
     {
+        if (this.query != null)
+        {
+            throw new ArgumentException($"Query has already been configured");
+        }
+
         this.query = (context, connection) => query(connection);
         return this;
     }
@@ -26,7 +36,7 @@ public sealed class DapperGetEndpointBuilder<T>(WebApplication webApplication, s
     {
         if (query == null)
         {
-            throw new ArgumentNullException(nameof(Query));
+            throw new ArgumentException("Query is required");
         }
 
         var sqlConnection = webApplication.Services.GetRequiredService<IDbConnection>();

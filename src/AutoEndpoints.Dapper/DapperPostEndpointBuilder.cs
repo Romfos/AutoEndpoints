@@ -11,12 +11,22 @@ public sealed class DapperPostEndpointBuilder<T>(WebApplication webApplication, 
 
     public DapperPostEndpointBuilder<T> Command(Func<HttpContext, IDbConnection, T, Task> command)
     {
+        if (this.command != null)
+        {
+            throw new ArgumentException($"Command has already been configured");
+        }
+
         this.command = command;
         return this;
     }
 
     public DapperPostEndpointBuilder<T> Command(Func<IDbConnection, T, Task> command)
     {
+        if (this.command != null)
+        {
+            throw new ArgumentException($"Command has already been configured");
+        }
+
         this.command = (context, connection, value) => command(connection, value);
         return this;
     }
@@ -25,7 +35,7 @@ public sealed class DapperPostEndpointBuilder<T>(WebApplication webApplication, 
     {
         if (command == null)
         {
-            throw new ArgumentNullException(nameof(Command));
+            throw new ArgumentException("Command is required");
         }
 
         var sqlConnection = webApplication.Services.GetRequiredService<IDbConnection>();
