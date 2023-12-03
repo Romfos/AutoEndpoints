@@ -12,9 +12,21 @@ public sealed class CosmosGetEndpointBuilder<T>(WebApplication webApplication, s
     private Func<HttpContext, string>? partitionSelector;
     private Func<HttpContext, string>? idSelector;
 
+    public CosmosGetEndpointBuilder<T> Database(string database)
+    {
+        databaseSelector = context => database;
+        return this;
+    }
+
     public CosmosGetEndpointBuilder<T> Database(Func<HttpContext, string> selector)
     {
         databaseSelector = selector;
+        return this;
+    }
+
+    public CosmosGetEndpointBuilder<T> Collection(string collection)
+    {
+        collectionSelector = context => collection;
         return this;
     }
 
@@ -24,9 +36,33 @@ public sealed class CosmosGetEndpointBuilder<T>(WebApplication webApplication, s
         return this;
     }
 
+    public CosmosGetEndpointBuilder<T> Partition(string partition)
+    {
+        partitionSelector = context => partition;
+        return this;
+    }
+
+    public CosmosGetEndpointBuilder<T> PartitionFromRoute(string routeParameterName)
+    {
+        partitionSelector = context => context.GetRouteValue(routeParameterName)?.ToString()!;
+        return this;
+    }
+
     public CosmosGetEndpointBuilder<T> Partition(Func<HttpContext, string> selector)
     {
         partitionSelector = selector;
+        return this;
+    }
+
+    public CosmosGetEndpointBuilder<T> IdFromRoute(string routeParameterName)
+    {
+        idSelector = context => context.GetRouteValue(routeParameterName)?.ToString()!;
+        return this;
+    }
+
+    public CosmosGetEndpointBuilder<T> Id(string id)
+    {
+        idSelector = context => id;
         return this;
     }
 

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AutoEndpoints.Cosmos;
@@ -10,15 +11,39 @@ public sealed class CosmosPostEndpointBuilder<T>(WebApplication webApplication, 
     private Func<HttpContext, string>? collectionSelector;
     private Func<HttpContext, string>? partitionSelector;
 
+    public CosmosPostEndpointBuilder<T> Database(string database)
+    {
+        databaseSelector = context => database;
+        return this;
+    }
+
     public CosmosPostEndpointBuilder<T> Database(Func<HttpContext, string> selector)
     {
         databaseSelector = selector;
         return this;
     }
 
+    public CosmosPostEndpointBuilder<T> Collection(string collection)
+    {
+        collectionSelector = context => collection;
+        return this;
+    }
+
     public CosmosPostEndpointBuilder<T> Collection(Func<HttpContext, string> selector)
     {
         collectionSelector = selector;
+        return this;
+    }
+
+    public CosmosPostEndpointBuilder<T> Partition(string partition)
+    {
+        partitionSelector = context => partition;
+        return this;
+    }
+
+    public CosmosPostEndpointBuilder<T> PartitionFromRoute(string routeParameterName)
+    {
+        partitionSelector = context => context.GetRouteValue(routeParameterName)?.ToString()!;
         return this;
     }
 

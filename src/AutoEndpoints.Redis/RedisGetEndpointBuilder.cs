@@ -15,6 +15,12 @@ public sealed class RedisGetEndpointBuilder<T>(WebApplication webApplication, st
         return this;
     }
 
+    public RedisGetEndpointBuilder<T> KeyFromRoute(string routeParameterName)
+    {
+        keySelector = context => context.GetRouteValue(routeParameterName)?.ToString()!;
+        return this;
+    }
+
     public RouteHandlerBuilder Build()
     {
         if (keySelector == null)

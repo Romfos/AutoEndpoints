@@ -25,16 +25,16 @@ public class Program
         var app = builder.Build();
 
         app.MapCosmosGetEndpoint<CosmosTestModel>("{partition}/{id}")
-            .Database(x => "db1")
-            .Collection(x => "container1")
-            .Partition(x => x.GetRouteValue("partition")?.ToString()!)
-            .Id(x => x.GetRouteValue("id")?.ToString()!)
+            .Database("db1")
+            .Collection("container1")
+            .PartitionFromRoute("partition")
+            .IdFromRoute("id")
             .Build();
 
-        app.MapCosmosPostEndpoint<CosmosTestModel>("{partition}/{id}").Database(x => "db1")
-            .Database(x => "db1")
-            .Collection(x => "container1")
-            .Partition(x => x.GetRouteValue("partition")?.ToString()!)
+        app.MapCosmosPostEndpoint<CosmosTestModel>("{partition}/{id}")
+            .Database("db1")
+            .Collection("container1")
+            .PartitionFromRoute("partition")
             .Build();
 
         await app.RunAsync();

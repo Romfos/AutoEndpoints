@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AutoEndpoints.Redis;
@@ -11,6 +12,12 @@ public sealed class RedisPostEndpointBuilder<T>(WebApplication webApplication, s
     public RedisPostEndpointBuilder<T> Key(Func<HttpContext, string> selector)
     {
         keySelector = selector;
+        return this;
+    }
+
+    public RedisPostEndpointBuilder<T> KeyFromRoute(string routeParameterName)
+    {
+        keySelector = context => context.GetRouteValue(routeParameterName)?.ToString()!;
         return this;
     }
 

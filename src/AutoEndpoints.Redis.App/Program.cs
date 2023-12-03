@@ -11,11 +11,11 @@ public class Program
         var app = builder.Build();
 
         app.MapRedisGetEndpoint<RedisTestModel>("{id}")
-            .Key(context => context.Request.RouteValues["id"]!.ToString()!)
+            .KeyFromRoute("id")
             .Build();
 
         app.MapRedisPostEndpoint<RedisTestModel>("{id}")
-            .Key(context => context.Request.RouteValues["id"]!.ToString()!)
+            .KeyFromRoute("id")
             .Build();
 
         await app.RunAsync();
