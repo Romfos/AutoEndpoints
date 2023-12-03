@@ -1,6 +1,6 @@
 # Overview
 
-AutoEndpoints is a framework for automatic database mapping to asp.net core web api with verification and validation
+AutoEndpoints is a WebAPI framework for automatic endpoint building for database entities
 
 [![.github/workflows/build.yml](https://github.com/Romfos/AutoEndpoints/actions/workflows/build.yml/badge.svg)](https://github.com/Romfos/AutoEndpoints/actions/workflows/build.yml)
 
