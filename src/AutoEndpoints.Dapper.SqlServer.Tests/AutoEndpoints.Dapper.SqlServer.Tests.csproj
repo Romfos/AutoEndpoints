@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AutoEndpoints.SqlServer.App\AutoEndpoints.SqlServer.App.csproj" />
+    <ProjectReference Include="..\AutoEndpoints.Dapper.SqlServer.App\AutoEndpoints.Dapper.SqlServer.App.csproj" />
   </ItemGroup>
 
 </Project>

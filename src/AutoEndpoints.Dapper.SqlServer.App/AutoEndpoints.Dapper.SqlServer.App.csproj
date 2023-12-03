@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AutoEndpoints.SqlServer\AutoEndpoints.SqlServer.csproj" />
+    <ProjectReference Include="..\AutoEndpoints.Dapper.SqlServer\AutoEndpoints.Dapper.SqlServer.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-namespace AutoEndpoints.SqlServer.App;
+namespace AutoEndpoints.Dapper.SqlServer.App;
 
 public sealed record SqlServerTestModel(
     string Id,

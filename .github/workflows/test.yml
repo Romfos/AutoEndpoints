@@ -62,7 +62,7 @@ jobs:
         run: docker compose -f ./docker/docker-compose.yml up -d sql
 
       - name: Test
-        run: dotnet test ./src/AutoEndpoints.SqlServer.Tests/AutoEndpoints.SqlServer.Tests.csproj
+        run: dotnet test ./src/AutoEndpoints.Dapper.SqlServer.Tests/AutoEndpoints.Dapper.SqlServer.Tests.csproj
 
       - name: Stop database
         run: docker compose -f ./docker/docker-compose.yml down

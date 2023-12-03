@@ -1,31 +1,33 @@
-using AutoEndpoints.SqlServer.App;
+using AutoEndpoints.Dapper.SqlServer.App;
+using Dapper;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Data.SqlClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net.Http.Json;
 
-namespace AutoEndpoints.SqlServer.Tests;
+namespace AutoEndpoints.Dapper.SqlServer.Tests;
 
 [TestClass]
 public sealed class IntegrationTests
 {
     [TestMethod]
-    public async Task SqlServerTest()
+    public async Task DapperSqlServerTest()
     {
         // arrange
 
-        var options = new DbContextOptionsBuilder<SqlServerContext>()
-            .UseSqlServer("Data Source=localhost;Initial Catalog=Database1;User Id=sa;Password=a123456789!")
-            .Options;
+        var id = $"{Environment.Version}:{nameof(DapperSqlServerTest)}";
 
-        var id = $"{Environment.Version}:{nameof(SqlServerTest)}";
+        var sqlConnection = new SqlConnection("Data Source=localhost;Initial Catalog=Database1;User Id=sa;Password=a123456789!;TrustServerCertificate=True");
+        await sqlConnection.OpenAsync();
 
-        using (var context = new SqlServerContext(options))
-        {
-            context.Database.EnsureCreated();
+        await sqlConnection.QueryAsync("""
+            IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'Database1')
+            BEGIN
+              CREATE DATABASE Database1;
+            END;
+            """);
 
-            context.Database.ExecuteSqlRaw(
-                """
+        await sqlConnection.QueryAsync("""
             IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = N'SqlServerTestModels')
             BEGIN
                 CREATE TABLE [dbo].[SqlServerTestModels]
@@ -36,13 +38,9 @@ public sealed class IntegrationTests
             END 
             """);
 
-            var current = await context.SqlServerTestModels.SingleOrDefaultAsync(x => x.Id == id);
-            if (current != null)
-            {
-                context.SqlServerTestModels.Remove(current);
-                await context.SaveChangesAsync();
-            }
-        }
+        await sqlConnection.QueryAsync("""
+            DELETE FROM [dbo].[SqlServerTestModels] WHERE Id = @Id;
+            """, new { Id = id });
 
         var webApplicationFactory = new WebApplicationFactory<Program>();
         using var httpClient = webApplicationFactory.CreateClient();
