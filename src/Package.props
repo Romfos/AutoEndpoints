@@ -1,0 +1,17 @@
+<Project>
+
+  <PropertyGroup>
+    <Authors>Romfos</Authors>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>AutoEndpoints is a ASP.NET Core based framework for rapid WebAPI development</Description>
+    <PackageTags>ASP.NET AspNetCore WebApi</PackageTags>
+    <RepositoryUrl>https://github.com/Romfos/AutoEndpoints</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\">
+      <Visible>false</Visible>
+    </None>
+  </ItemGroup>
+
+</Project>

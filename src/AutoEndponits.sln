@@ -1,0 +1,105 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".global", ".global", "{86539D9F-14D2-45A0-BF9E-D62C6EB54C31}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+		..\docker\docker-compose.yml = ..\docker\docker-compose.yml
+		Package.props = Package.props
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Redis", "Redis", "{0F215E38-13F0-4806-8CD9-403A425FB497}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cosmos", "Cosmos", "{CA8D85CD-D721-49AF-911D-382C7E0A8B62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlServer", "SqlServer", "{6FE40874-48EA-483A-8ECC-2743020F071E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoEndpoints.Cosmos", "AutoEndpoints.Cosmos\AutoEndpoints.Cosmos.csproj", "{5662287C-3037-4CBE-A563-C52B1A05212E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoEndpoints.Cosmos.App", "AutoEndpoints.Cosmos.App\AutoEndpoints.Cosmos.App.csproj", "{EDEBBE74-A3A4-4B93-B1F3-FACA9C9A234C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoEndpoints.Cosmos.Tests", "AutoEndpoints.Cosmos.Tests\AutoEndpoints.Cosmos.Tests.csproj", "{8ABE6CFD-CCBF-474E-8307-35E8E963846D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoEndpoints.Redis", "AutoEndpoints.Redis\AutoEndpoints.Redis.csproj", "{02E60233-13E5-4EF9-A9A4-C5F6E5129779}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoEndpoints.Redis.App", "AutoEndpoints.Redis.App\AutoEndpoints.Redis.App.csproj", "{FC2EA3F8-E38E-4FD7-9AD2-5C21317A816D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoEndpoints.Redis.Tests", "AutoEndpoints.Redis.Tests\AutoEndpoints.Redis.Tests.csproj", "{8DBC7E67-ED21-4F56-99D4-7D3966DF6B28}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoEndpoints.SqlServer", "AutoEndpoints.SqlServer\AutoEndpoints.SqlServer.csproj", "{B93A26C3-B954-40F6-B5E9-F60573326F4A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoEndpoints.SqlServer.App", "AutoEndpoints.SqlServer.App\AutoEndpoints.SqlServer.App.csproj", "{52917E9C-D5E1-49C1-86AA-1AD83E8E617E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoEndpoints.SqlServer.Tests", "AutoEndpoints.SqlServer.Tests\AutoEndpoints.SqlServer.Tests.csproj", "{F1138E72-9725-4A22-ABAD-CD90FF23D25E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoEndpoints", "AutoEndpoints\AutoEndpoints.csproj", "{587F1476-798B-49CF-932A-62705DA0DF49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5662287C-3037-4CBE-A563-C52B1A05212E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5662287C-3037-4CBE-A563-C52B1A05212E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5662287C-3037-4CBE-A563-C52B1A05212E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5662287C-3037-4CBE-A563-C52B1A05212E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDEBBE74-A3A4-4B93-B1F3-FACA9C9A234C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDEBBE74-A3A4-4B93-B1F3-FACA9C9A234C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDEBBE74-A3A4-4B93-B1F3-FACA9C9A234C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDEBBE74-A3A4-4B93-B1F3-FACA9C9A234C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ABE6CFD-CCBF-474E-8307-35E8E963846D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ABE6CFD-CCBF-474E-8307-35E8E963846D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ABE6CFD-CCBF-474E-8307-35E8E963846D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ABE6CFD-CCBF-474E-8307-35E8E963846D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E60233-13E5-4EF9-A9A4-C5F6E5129779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E60233-13E5-4EF9-A9A4-C5F6E5129779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E60233-13E5-4EF9-A9A4-C5F6E5129779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E60233-13E5-4EF9-A9A4-C5F6E5129779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC2EA3F8-E38E-4FD7-9AD2-5C21317A816D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC2EA3F8-E38E-4FD7-9AD2-5C21317A816D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC2EA3F8-E38E-4FD7-9AD2-5C21317A816D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC2EA3F8-E38E-4FD7-9AD2-5C21317A816D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DBC7E67-ED21-4F56-99D4-7D3966DF6B28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DBC7E67-ED21-4F56-99D4-7D3966DF6B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DBC7E67-ED21-4F56-99D4-7D3966DF6B28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DBC7E67-ED21-4F56-99D4-7D3966DF6B28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B93A26C3-B954-40F6-B5E9-F60573326F4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B93A26C3-B954-40F6-B5E9-F60573326F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B93A26C3-B954-40F6-B5E9-F60573326F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B93A26C3-B954-40F6-B5E9-F60573326F4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52917E9C-D5E1-49C1-86AA-1AD83E8E617E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52917E9C-D5E1-49C1-86AA-1AD83E8E617E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52917E9C-D5E1-49C1-86AA-1AD83E8E617E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52917E9C-D5E1-49C1-86AA-1AD83E8E617E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1138E72-9725-4A22-ABAD-CD90FF23D25E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1138E72-9725-4A22-ABAD-CD90FF23D25E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1138E72-9725-4A22-ABAD-CD90FF23D25E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1138E72-9725-4A22-ABAD-CD90FF23D25E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{587F1476-798B-49CF-932A-62705DA0DF49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{587F1476-798B-49CF-932A-62705DA0DF49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{587F1476-798B-49CF-932A-62705DA0DF49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{587F1476-798B-49CF-932A-62705DA0DF49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5662287C-3037-4CBE-A563-C52B1A05212E} = {CA8D85CD-D721-49AF-911D-382C7E0A8B62}
+		{EDEBBE74-A3A4-4B93-B1F3-FACA9C9A234C} = {CA8D85CD-D721-49AF-911D-382C7E0A8B62}
+		{8ABE6CFD-CCBF-474E-8307-35E8E963846D} = {CA8D85CD-D721-49AF-911D-382C7E0A8B62}
+		{02E60233-13E5-4EF9-A9A4-C5F6E5129779} = {0F215E38-13F0-4806-8CD9-403A425FB497}
+		{FC2EA3F8-E38E-4FD7-9AD2-5C21317A816D} = {0F215E38-13F0-4806-8CD9-403A425FB497}
+		{8DBC7E67-ED21-4F56-99D4-7D3966DF6B28} = {0F215E38-13F0-4806-8CD9-403A425FB497}
+		{B93A26C3-B954-40F6-B5E9-F60573326F4A} = {6FE40874-48EA-483A-8ECC-2743020F071E}
+		{52917E9C-D5E1-49C1-86AA-1AD83E8E617E} = {6FE40874-48EA-483A-8ECC-2743020F071E}
+		{F1138E72-9725-4A22-ABAD-CD90FF23D25E} = {6FE40874-48EA-483A-8ECC-2743020F071E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAE40C1F-0AB1-4139-B9DE-AD8CA05BC3A4}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,13 @@
+@AutoLayouts.Redis.App_HostAddress = http://localhost:5089
+
+GET {{AutoLayouts.Redis.App_HostAddress}}/test
+
+###
+
+POST {{AutoLayouts.Redis.App_HostAddress}}/test
+Content-Type: application/json
+
+{
+  "x": 1,
+  "y": 2
+}
