@@ -20,3 +20,69 @@ jobs:
 
       - name: Format
         run: dotnet format --verify-no-changes --no-restore ./src/AutoEndpoints.sln
+
+  redis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: |
+            6.0.x
+            7.0.x
+            8.0.x
+
+      - name: Start database
+        run: docker compose -f ./docker/docker-compose.yml up -d redis
+
+      - name: Test
+        run: dotnet test ./src/AutoEndpoints.Redis.Tests/AutoEndpoints.Redis.Tests.csproj
+
+      - name: Stop database
+        run: docker compose -f ./docker/docker-compose.yml down
+
+  cosmos:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: |
+            6.0.x
+            7.0.x
+            8.0.x
+
+      - name: Start database
+        uses: southpolesteve/cosmos-emulator-github-action@v1
+
+      - name: Test
+        run: dotnet test ./src/AutoEndpoints.Cosmos.Tests/AutoEndpoints.Cosmos.Tests.csproj
+
+  mssql:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: |
+            6.0.x
+            7.0.x
+            8.0.x
+
+      - name: Start database
+        run: docker compose -f ./docker/docker-compose.yml up -d sql
+
+      - name: Test
+        run: dotnet test ./src/AutoEndpoints.Dapper.SqlServer.Tests/AutoEndpoints.Dapper.SqlServer.Tests.csproj
+
+      - name: Stop database
+        run: docker compose -f ./docker/docker-compose.yml down
