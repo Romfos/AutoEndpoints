@@ -17,7 +17,7 @@ public sealed class IntegrationTests
 
         var id = $"{Environment.Version}:{nameof(DapperSqlServerTest)}";
 
-        var sqlConnection = new SqlConnection("Data Source=localhost;Initial Catalog=Database1;User Id=sa;Password=a123456789!;TrustServerCertificate=True");
+        var sqlConnection = new SqlConnection("Data Source=localhost;User Id=sa;Password=a123456789!;TrustServerCertificate=True");
         await sqlConnection.OpenAsync();
 
         await sqlConnection.QueryAsync("""
@@ -28,9 +28,10 @@ public sealed class IntegrationTests
             """);
 
         await sqlConnection.QueryAsync("""
+            USE Database1;
             IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = N'SqlServerTestModels')
             BEGIN
-                CREATE TABLE [dbo].[SqlServerTestModels]
+                CREATE TABLE [SqlServerTestModels]
                 (
             	    [Id] NVARCHAR(256) NOT NULL PRIMARY KEY,
             	    [Value] INT NOT NULL
@@ -39,7 +40,8 @@ public sealed class IntegrationTests
             """);
 
         await sqlConnection.QueryAsync("""
-            DELETE FROM [dbo].[SqlServerTestModels] WHERE Id = @Id;
+            USE Database1;
+            DELETE FROM [SqlServerTestModels] WHERE Id = @Id;
             """, new { Id = id });
 
         var webApplicationFactory = new WebApplicationFactory<Program>();
