@@ -6,16 +6,17 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        builder.Services.AddRedisLayouts("localhost:6379");
+        builder.Services.AddRedisEndpoints("localhost:6379");
 
         var app = builder.Build();
 
-        app.MapGetLayout("{id}")
-            .UseRedis(context => context.GetStringRouteValue("id"));
+        app.MapRedisGetEndpoint<RedisTestModel>("{id}")
+            .Key(context => context.Request.RouteValues["id"]!.ToString()!)
+            .Build();
 
-        app.MapPostLayout<RedisTestModel>("{id}")
-            .Validate(StatusCodes.Status400BadRequest, (context, model) => model.Y > 3)
-            .UseRedis((context, body) => context.GetStringRouteValue("id"));
+        app.MapRedisPostEndpoint<RedisTestModel>("{id}")
+            .Key(context => context.Request.RouteValues["id"]!.ToString()!)
+            .Build();
 
         await app.RunAsync();
     }

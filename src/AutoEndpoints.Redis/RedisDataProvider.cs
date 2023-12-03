@@ -3,14 +3,9 @@ using System.Text.Json;
 
 namespace AutoEndpoints.Redis;
 
-internal sealed class RedisStorage(string connectionString)
+internal sealed class RedisDataProvider(string connectionString)
 {
     private readonly IDatabase database = ConnectionMultiplexer.Connect(connectionString).GetDatabase();
-
-    public async Task<string?> GetAsync(string key)
-    {
-        return await database.StringGetAsync(key);
-    }
 
     public async Task<T?> GetAsync<T>(string key)
     {
