@@ -1,8 +1,6 @@
 # Overview
 
-AutoEndpoints is ASP.NET Core based framework for rapid WebAPI development.
-
-Allow directly map database entities to web api endpoints with access verification and body validation
+AutoEndpoints is a WebAPI framework for automatic endpoint building for database entities
 
 Supported databases:
 - [Redis](https://www.nuget.org/packages/AutoEndpoints.Redis) 
