@@ -18,18 +18,24 @@ public class Program
             LimitToEndpoint = true
         };
 
-        builder.Services.AddCosmosLayouts(
+        builder.Services.AddCosmosEndpoints(
             "AccountEndpoint=https://localhost:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==",
             cosmosClientOptions);
 
         var app = builder.Build();
 
-        app.MapGetLayout("{partition}/{id}")
-            .UseCosmos("db1", "container1", x => x.GetStringRouteValue("partition"), x => x.GetStringRouteValue("id"));
+        app.MapCosmosGetEndpoint<CosmosTestModel>("{partition}/{id}")
+            .Database(x => "db1")
+            .Collection(x => "container1")
+            .Partition(x => x.GetRouteValue("partition")?.ToString()!)
+            .Id(x => x.GetRouteValue("id")?.ToString()!)
+            .Build();
 
-        app.MapPostLayout<CosmosTestModel>("{partition}/{id}")
-            .Validate(StatusCodes.Status400BadRequest, (context, model) => model.Value > 3)
-            .UseCosmos("db1", "container1", (context, body) => context.GetStringRouteValue("partition"));
+        app.MapCosmosPostEndpoint<CosmosTestModel>("{partition}/{id}").Database(x => "db1")
+            .Database(x => "db1")
+            .Collection(x => "container1")
+            .Partition(x => x.GetRouteValue("partition")?.ToString()!)
+            .Build();
 
         await app.RunAsync();
     }

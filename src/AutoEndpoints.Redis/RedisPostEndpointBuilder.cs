@@ -8,9 +8,9 @@ public sealed class RedisPostEndpointBuilder<T>(WebApplication webApplication, s
 {
     private Func<HttpContext, string>? keySelector;
 
-    public RedisPostEndpointBuilder<T> Key(Func<HttpContext, string> keySelector)
+    public RedisPostEndpointBuilder<T> Key(Func<HttpContext, string> selector)
     {
-        this.keySelector = keySelector;
+        keySelector = selector;
         return this;
     }
 

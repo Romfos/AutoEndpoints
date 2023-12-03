@@ -3,19 +3,19 @@ using System.Net;
 
 namespace AutoEndpoints.Cosmos;
 
-internal sealed class ContainerStorage(Container container)
+internal sealed class CosmosContainerDataProvider(Container container)
 {
-    private static readonly ItemRequestOptions itemRequestOptions = new ItemRequestOptions() { EnableContentResponseOnWrite = true };
+    private static readonly ItemRequestOptions itemRequestOptions = new() { EnableContentResponseOnWrite = true };
 
-    public async Task<string?> GetAsync(string partition, string id)
+    public async Task<T?> GetAsync<T>(string partition, string id)
     {
         try
         {
-            return await container.ReadItemAsync<string>(id, new PartitionKey(partition));
+            return await container.ReadItemAsync<T>(id, new PartitionKey(partition));
         }
         catch (CosmosException cosmosException) when (cosmosException.StatusCode == HttpStatusCode.NotFound)
         {
-            return null;
+            return default;
         }
     }
 
