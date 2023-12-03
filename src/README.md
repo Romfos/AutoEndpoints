@@ -1,11 +1,7 @@
 # Overview
 
-AutoEndpoints is ASP.NET Core based framework for rapid WebAPI development
-
-Main features:
-1) Automatic creating endpoints for databases.
-2) Access verification. Allow to control access to specific endpoints.
-3) Validation support. Allow to validate post body requests.
+AutoEndpoints is ASP.NET Core based framework for rapid WebAPI development.
+Allow directly map database entities to web api enponits with access veritication and body validation
 
 Supported databases:
 - [Redis](https://www.nuget.org/packages/AutoEndpoints.Redis) 
@@ -22,19 +18,17 @@ Supported platforms:
 ```csharp
 var builder = WebApplication.CreateBuilder(args);
 
-// register redis layouts
-builder.Services.AddRedisLayouts("localhost:6379");
+builder.Services.AddRedisEndpoints("localhost:6379");
 
 var app = builder.Build();
 
-// map get endpoint
-app.MapGetLayout<RedisTestModel>("{id}")
-    .UseRedis(context => context.GetStringRouteValue("id"));
+app.MapRedisGetEndpoint<RedisTestModel>("{id}")
+    .KeyFromRoute("id")
+    .Build();
 
-// map post endpoint with validation
-app.MapPostLayout<RedisTestModel>("{id}")
-    .Validate(StatusCodes.Status400BadRequest, (context, model) => model.Y > 3)
-    .UseRedis((context, body) => context.GetStringRouteValue("id"));
+app.MapRedisPostEndpoint<RedisTestModel>("{id}")
+    .KeyFromRoute("id")
+    .Build();
 
 await app.RunAsync();
 ```
