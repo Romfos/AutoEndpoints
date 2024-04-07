@@ -9,7 +9,6 @@ Supported databases:
 
 Supported platforms:
  - .NET 6
- - .NET 7 
  - .NET 8
 
 # Example
