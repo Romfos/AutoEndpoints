@@ -8,7 +8,6 @@ Supported databases:
 - [Microsoft SQL Server with dapper](https://www.nuget.org/packages/AutoEndpoints.Dapper.SqlServer)
 
 Supported platforms:
- - .NET 6
  - .NET 8
 
 # Example
