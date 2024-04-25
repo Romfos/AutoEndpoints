@@ -7,9 +7,6 @@ Supported databases:
 - [Microsoft Azure Cosmos DB](https://www.nuget.org/packages/AutoEndpoints.Cosmos)
 - [Microsoft SQL Server with dapper](https://www.nuget.org/packages/AutoEndpoints.Dapper.SqlServer)
 
-Supported platforms:
- - .NET 8
-
 # Example
 
 ```csharp
