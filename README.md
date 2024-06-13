@@ -14,8 +14,7 @@ Supported databases:
 3) Microsoft SQL Server
 
 Supported platforms:
- - .NET 6
- - .NET 8 (Recommended)
+ - .NET 8+
 
 # Example
 
