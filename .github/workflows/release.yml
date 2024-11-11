@@ -17,7 +17,9 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: |
+            8.0.x
+            9.0.x
 
       - name: Pack
         run: dotnet pack -c Release -p:Version=${{ inputs.Version }} -o "./build" ./src/AutoEndpoints.sln
