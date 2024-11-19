@@ -6,6 +6,7 @@
     <Description>AutoEndpoints is a ASP.NET Core based framework for rapid WebAPI development</Description>
     <PackageTags>ASP.NET AspNetCore WebAPI MinimalAPIs</PackageTags>
     <RepositoryUrl>https://github.com/Romfos/AutoEndpoints</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
